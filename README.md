@@ -43,3 +43,5 @@ data=datasets/smoke/data.yaml Using script: python src/evaluate.py --weights run
 
 Results (Sample Outputs) results/ ├── sample_train_batch.jpg └── sample_prediction.jpg
 
+
+<img width="1536" height="1024" alt="ChatGPT Image Nov 10, 2025, 04_00_39 AM" src="https://github.com/user-attachments/assets/b85ba6df-deb9-44d7-83fe-14089f22fcb0" />
