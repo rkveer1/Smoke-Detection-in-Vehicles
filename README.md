@@ -14,7 +14,32 @@ This project aims to detect smoke-emitting vehicles using Object Detection (YOLO
 - OpenCV
 - NumPy
 
-## Upcoming (Week 2)
-- Add smoke detection logic
-- Create alert logging system
+Week 2 Milestone
+
+Dataset prepared, annotations organized, initial training completed, and inference tested on sample images. The repository includes scripts and steps to reproduce training and inference results.
+
+Key Features
+
+YOLOv8-based object detection for vehicles and smoke
+
+Structured project layout with dedicated scripts for training, inference, and evaluation
+
+Works on both CPU and GPU environments
+
+Fully reproducible setup using requirements.txt
+
+Command-line and Python script-based execution support
+
+Project Structure Smoke-Detection-in-Vehicles/ │ ├── src/ │ ├── train.py # Training wrapper for Ultralytics YOLO │ ├── infer.py # Run inference on images/videos │ ├── evaluate.py # Model validation and metric evaluation │ └── init.py │ ├── datasets/ │ └── smoke/ # Custom dataset (YOLO format) │ ├── data.yaml │ ├── train/ │ │ ├── images/ │ │ └── labels/ │ ├── val/ │ │ ├── images/ │ │ └── labels/ │ └── test/ # Optional │ ├── images/ │ └── labels/ │ ├── results/ # Training and inference outputs ├── README.md └── requirements.txt
+
+Running Inference
+
+Run prediction on a single image or an entire folder: yolo predict model="runs/train//weights/best.pt"
+source="path/to/image_or_folder" save=True
+
+Model Validation Using YOLO CLI: yolo task=detect mode=val model="runs/train//weights/best.pt"
+data=datasets/smoke/data.yaml Using script: python src/evaluate.py --weights runs/train//weights/best.pt
+--data datasets/smoke/data.yaml
+
+Results (Sample Outputs) results/ ├── sample_train_batch.jpg └── sample_prediction.jpg
 
